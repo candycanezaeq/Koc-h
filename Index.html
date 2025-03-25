@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KOC MILDY INCONVENIENCED YOU</title>
+  <script>
+    // Clone the page in a new window
+    function clonePage() {
+      var newWindow = window.open('', '_blank');
+      newWindow.document.write(document.documentElement.outerHTML);
+      newWindow.document.close();
+    }
+
+    // Attempt to hide the page
+    function hidePage() {
+      document.body.style.display = 'none';
+    }
+
+    // Simulate a page crash
+    function crashPage() {
+      document.body.innerHTML = '<h1>Page Crashed!</h1>';
+    }
+
+    // Request notification permissions
+    function requestNotifications() {
+      Notification.requestPermission().then(function(permission) {
+        if (permission === 'granted') {
+          spamNotifications();
+        }
+      });
+    }
+
+    // Spam notifications
+    function spamNotifications() {
+      setInterval(function() {
+        new Notification('KOC MILDY INCONVENIENCED YOU', {
+          body: 'You have been mildly inconvenienced!',
+          icon: 'https://example.com/icon.png'
+        });
+      }, 1000);
+    }
+
+    // Run the script
+    clonePage();
+    hidePage();
+    crashPage();
+    requestNotifications();
+  </script>
+</head>
+<body>
+  <h1>KOC MILDY INCONVENIENCED YOU</h1>
+</body>
+</html>
